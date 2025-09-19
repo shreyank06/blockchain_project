@@ -6,6 +6,10 @@ Build
 ```
 cargo build
 ```
+'''
+touch opportunities.db
+```
+
 run
 ```
 cargo run
