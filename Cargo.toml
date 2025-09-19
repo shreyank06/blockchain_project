@@ -1,0 +1,16 @@
+[package]
+name = "polygon-arbitrage-bot"  # Changed to more descriptive name
+version = "0.1.0"
+edition = "2021"  # Update to 2021 edition
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+dotenv = "0.15"
+sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio", "macros"] }  # Removed -rustls
+web3 = "0.19.0"  # Add web3 for blockchain interaction
+serde_json = "1.0"  # Add for JSON parsing
+serde = { version = "1.0", features = ["derive"] }  # Add for serialization
+anyhow = "1.0"  # Add for better error handling
+
+# Remove this line - it's the wrong "config" crate
+# config = "0.13"
