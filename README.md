@@ -6,6 +6,7 @@ Build
 ```
 cargo build
 ```
+crate db file
 '''
 touch opportunities.db
 ```
