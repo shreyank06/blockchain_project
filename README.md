@@ -5,6 +5,7 @@ A bot in Rust that detects potential arbitrage opportunities on the Polygon netw
 Clone the repo, and from inside the project directory:
 
 1. **Building and Running the Modules Locally**
+
     1.1. Create the database file if not already there:
     ```bash
     touch opportunities.db
