@@ -38,6 +38,7 @@ Clone the repo, and from inside the project directory:
     ```bash
     SELECT * FROM opportunities;
     ```
+---
 
 3. **Building and Running the Modules in Isolation in Docker Environment**
 
