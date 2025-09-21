@@ -1,68 +1,80 @@
 # Blockchain Project
-A bot in Rust that detects potential arbitrage opportunities on the Polygon network. Arbitrage, in this context, means finding a situation where a specific token (e.g., USDC, ETH, BTC or any other token) can be bought cheaply on one Decentralized Exchange (DEX) and immediately sold for a higher price on another DEX.
+A bot in Rust that detects potential arbitrage opportunities on the Polygon network. Arbitrage, in this context, means finding a situation where a specific token (e.g., USDC, ETH, BTC, or any other token) can be bought cheaply on one Decentralized Exchange (DEX) and immediately sold for a higher price on another DEX.
 
-## Execution
-Clone the repo, and from inside the project directory
+## Execution  
+Clone the repo, and from inside the project directory:
 
-1. Building and Running the modules locally
+1. **Building and Running the Modules Locally**
+    1.1. Create the database file if not already there:
+    ```bash
+    touch opportunities.db
+    ```
 
-1.1 crate db file if not already there
-```
-touch opportunities.db
-```
+    1.2. Build the project:
+    ```bash
+    cargo build
+    ```
 
-1.2 Build
-```
-cargo build
-```
+    1.3. Run the project:
+    ```bash
+    cargo run
+    ```
+    It will do 10 iterations for calculating potential arbitrage opportunities, make an entry for each in the database, and then terminate the program.
 
+2. **Database Entry Check Locally**
+    2.1. Open SQLite shell:
+    ```bash
+    sqlite3 opportunities.db
+    ```
 
-1.3 run
-```
-cargo run
-```
-It will do 10 iterations for calculating potential arbirtrage opportunities and make and entry for each in the database and then terminate the program.
+    2.2. List the tables:
+    ```bash
+    .tables
+    ```
 
-2. Database Entry Check Locally
+    2.3. Print all the rows from the `opportunities` table:
+    ```bash
+    SELECT * FROM opportunities;
+    ```
 
-2.1 Open SQLite shell
-```
-sqlite3 opportunities.db
-```
-2.2 list the tables
-```
-.tables
-```
-2.3 print all the rows from opportunities.db sql table
-```
-SELECT * FROM opportunities;
-```
+3. **Building and Running the Modules in Isolation in Docker Environment**
+    3.1. Build the Docker image:
+    ```bash
+    docker build -t arbitrage-app .
+    ```
 
-3.  Building and Running the modules in isolation in docker enviornment
-3.1 build
-```
-docker build -t arbitrage-app .
-```
-3.2 run
-```
-docker run arbitrage-app sh -c "cargo run && tail -f /dev/null"
-```
+    3.2. Run the container:
+    ```bash
+    docker run arbitrage-app sh -c "cargo run && tail -f /dev/null"
+    ```
 
+4. **Database Entry Check Inside Docker**
+    4.1. Get the container name with:
+    ```bash
+    docker ps
+    ```
 
-4. Database Entry Check inside docker
+    4.2. Then access the SQLite shell inside the container:
+    ```bash
+    docker exec -it <container_id_or_name> sqlite3 opportunities.db
+    ```
 
-4.1 get the container name with
-```
-docker ps
-```
-then
-```
-docker exec -it <container_id_or_name> sqlite3 opportunities.db
-```
-then inside sqlie termnal
-```
-.tables
-```
-```
-SELECT * FROM opportunities;
-```
+    4.3. Inside the SQLite terminal, list the tables:
+    ```bash
+    .tables
+    ```
+
+    4.4. Print all the rows from the `opportunities` table:
+    ```bash
+    SELECT * FROM opportunities;
+    ```
+
+---
+
+### Key Notes:
+- Markdown automatically continues numbering for nested items, so when you do `1.1`, `1.2`, it treats them as substeps of the main `1.` list. 
+- Ensure there’s a space between the number and the description (i.e., `1.1` instead of `1.1.`).
+
+Now, this should render correctly as a numbered list with substeps when viewed in markdown rendering tools like GitHub, GitLab, etc.
+
+Let me know if this fixes the issue!
