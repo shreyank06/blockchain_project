@@ -74,11 +74,3 @@ Clone the repo, and from inside the project directory:
     ```
 
 ---
-
-### Key Notes:
-- Markdown automatically continues numbering for nested items, so when you do `1.1`, `1.2`, it treats them as substeps of the main `1.` list. 
-- Ensure there’s a space between the number and the description (i.e., `1.1` instead of `1.1.`).
-
-Now, this should render correctly as a numbered list with substeps when viewed in markdown rendering tools like GitHub, GitLab, etc.
-
-Let me know if this fixes the issue!
