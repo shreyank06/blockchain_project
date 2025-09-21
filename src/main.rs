@@ -29,17 +29,20 @@ async fn main() -> anyhow::Result<()> {
     // 4. Setup RPC client
     let client = rpc::RpcClient::new(&config.rpc_url);
 
-    // 5. Main loop
-    loop {
+    // 5. Run for 10 iterations with 5 seconds of wait time between each
+    for _ in 0..10 {
         match fetch_and_check_prices(&client, &dex_a, &dex_b, &config, &pool).await {
             Ok(_) => println!("Price check completed successfully"),
             Err(e) => eprintln!("Error in price check: {}", e),
         }
 
-        // Wait before next check
-        sleep(Duration::from_secs(30)).await;
+        // Wait for 5 seconds before the next iteration
+        sleep(Duration::from_secs(5)).await;
     }
+
+    Ok(())
 }
+
 
 async fn fetch_and_check_prices(
     client: &rpc::RpcClient,
