@@ -38,7 +38,7 @@ print all the rows from opportunities.db sql table
 SELECT * FROM opportunities;
 ```
 
-### Building and Running the modules in isolation
+### Building and Running the modules in isolation in docker enviornment
 build
 ```
 docker build -t arbitrage-app .
