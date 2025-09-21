@@ -4,7 +4,7 @@ A bot in Rust that detects potential arbitrage opportunities on the Polygon netw
 ## Execution
 Clone the repo, and from inside the project directory
 
-### Building and Running the modules locally
+1. Building and Running the modules locally
 
 crate db file if not already there
 ```
