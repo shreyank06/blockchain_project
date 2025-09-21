@@ -18,7 +18,7 @@ run
 ```
 cargo run
 ```
-It will do 10 iterations for calculating potential arbirtrage opportunities and make and entry for each in the database.
+It will do 10 iterations for calculating potential arbirtrage opportunities and make and entry for each in the database and then terminate the program.
 
 ### Database Entry Check
 Open SQLite shell
