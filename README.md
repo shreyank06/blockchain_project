@@ -23,7 +23,7 @@ cargo run
 ```
 It will do 10 iterations for calculating potential arbirtrage opportunities and make and entry for each in the database and then terminate the program.
 
-#### Database Entry Check Locally
+1.1  Database Entry Check Locally
 
 Open SQLite shell
 ```
@@ -38,7 +38,7 @@ print all the rows from opportunities.db sql table
 SELECT * FROM opportunities;
 ```
 
-### Building and Running the modules in isolation in docker enviornment
+2.  Building and Running the modules in isolation in docker enviornment
 build
 ```
 docker build -t arbitrage-app .
@@ -49,7 +49,7 @@ docker run arbitrage-app sh -c "cargo run && tail -f /dev/null"
 ```
 
 
-#### Database Entry Check Locally
+2.2 Database Entry Check Locally
 
 get the container name with
 ```
