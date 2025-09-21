@@ -27,7 +27,7 @@ docker build -t arbitrage-app .
 ```
 run
 ```
-docker run arbitrage-app cargo run1
+docker run arbitrage-app sh -c "cargo run && tail -f /dev/null"
 ```
 
 
