@@ -23,6 +23,7 @@ Clone the repo, and from inside the project directory:
     It will do 10 iterations for calculating potential arbitrage opportunities, make an entry for each in the database, and then terminate the program.
 
 2. **Database Entry Check Locally**
+
     2.1. Open SQLite shell:
     ```bash
     sqlite3 opportunities.db
@@ -39,6 +40,7 @@ Clone the repo, and from inside the project directory:
     ```
 
 3. **Building and Running the Modules in Isolation in Docker Environment**
+
     3.1. Build the Docker image:
     ```bash
     docker build -t arbitrage-app .
@@ -50,6 +52,7 @@ Clone the repo, and from inside the project directory:
     ```
 
 4. **Database Entry Check Inside Docker**
+
     4.1. Get the container name with:
     ```bash
     docker ps
