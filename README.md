@@ -6,52 +6,52 @@ Clone the repo, and from inside the project directory
 
 1. Building and Running the modules locally
 
-crate db file if not already there
+1.1 crate db file if not already there
 ```
 touch opportunities.db
 ```
 
-Build
+1.2 Build
 ```
 cargo build
 ```
 
 
-run
+1.3 run
 ```
 cargo run
 ```
 It will do 10 iterations for calculating potential arbirtrage opportunities and make and entry for each in the database and then terminate the program.
 
-1.1  Database Entry Check Locally
+2. Database Entry Check Locally
 
-Open SQLite shell
+2.1 Open SQLite shell
 ```
 sqlite3 opportunities.db
 ```
-list the tables
+2.2 list the tables
 ```
 .tables
 ```
-print all the rows from opportunities.db sql table
+2.3 print all the rows from opportunities.db sql table
 ```
 SELECT * FROM opportunities;
 ```
 
-2.  Building and Running the modules in isolation in docker enviornment
-build
+3.  Building and Running the modules in isolation in docker enviornment
+3.1 build
 ```
 docker build -t arbitrage-app .
 ```
-run
+3.2 run
 ```
 docker run arbitrage-app sh -c "cargo run && tail -f /dev/null"
 ```
 
 
-2.2 Database Entry Check Locally
+4. Database Entry Check inside docker
 
-get the container name with
+4.1 get the container name with
 ```
 docker ps
 ```
