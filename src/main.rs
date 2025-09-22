@@ -5,7 +5,6 @@ mod price;
 mod arbitrage;
 mod profit;
 mod db;
-mod utils;
 
 use config::Config;
 use dex::Dex;
