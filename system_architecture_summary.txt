@@ -1,0 +1,30 @@
+System Architecture Summary
+
+1. Configuration & Setup
+- Environment variables (.env) store RPC URL, DEX addresses, token pairs, and profit thresholds.
+- config.rs loads these parameters for use across the system.
+
+2. Data Sources & Connectivity
+- rpc.rs connects to the Polygon blockchain via RPC.
+- dex.rs provides DEX contract addresses.
+- price.rs fetches real-time token prices from DEXs using web3.
+
+3. Arbitrage Opportunity Detection
+- main.rs compares token prices across multiple DEXs.
+	a. Main orchestrates the entire workflow:
+	b. Receives token prices from Price.rs.
+	c. Detects potential arbitrage opportunities.
+	d. Passes opportunities to arbitrage.rs for evaluation.
+
+- Sends profitable opportunities (Profit) to profit.rs.
+
+4. Opportunity Simulation
+- arbitrage.rs simulates trades to check feasibility.
+- Calculates estimated profits while accounting for gas costs.
+
+5. Profit Validation & Storage
+- profit.rs verifies profitable results.
+- db.rs records successful opportunities into a database for future analysis.
+
+6. Overall Workflow
+Config → Connect → Fetch Prices → Detect Opportunities → Simulate Trades → Validate Profit → Store Results
