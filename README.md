@@ -63,7 +63,7 @@ Clone the repo, and from inside the project directory:
 
 4. **Database Entry Check Inside Docker**
 
-    4.1. Get the container name with:
+    4.1. Get the container name with in other terminal:
     ```bash
     docker ps
     ```
