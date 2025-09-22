@@ -6,7 +6,7 @@ access files this for system architecture diagram and its summary in the project
 ```
 system_architecture.png
 system_architecture_summary.txt
-
+```
 ---
 ## Execution locally
 
